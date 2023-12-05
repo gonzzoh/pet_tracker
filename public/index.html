@@ -36,25 +36,26 @@
             color: red;
         }
     </style>
+    <script type="module" src="./index.js"></script>
 </head>
 
 <body>
     <main>
         <h1>Pet Project</h1>
         <form id="add-pet-form" aria-labelledby="form-heading">
-            <label for="name">Per Name<span class="required">*</span>:</label>
-            <input type="text" id="name" name="name">
+            <label for="name">Pet Name<span class="required">*</span>:</label>
+            <input required type="text" id="name" name="name">
 
             <label for="profile-picture">Profile Picture<span class="required">*</span></label>
-            <input type="text" id="profile-picture" name="profile-picture">
+            <input required type="text" id="profile-picture" name="petPic">
 
             <fieldset>
                 <legend for="species">Species<span class="required">*</span>:</legend>
 
-                <input type="radio" id="cat" name="species"/>
+                <input required type="radio" id="cat" name="species"/>
                 <label for="cat">Cat</label><br />
 
-                <input type="radio" id="og" name="species"/>
+                <input type="radio" id="dog" name="species"/>
                 <label for="og">Dog</label><br />
 
                 <input type="radio" id="bird" name="species"/>
@@ -62,13 +63,10 @@
             </fieldset>
 
             <label for="are-they-friendly">Are They Friendly?</label>
-            <input type="checkbox" id="are-they-friendly" name="areTheyFreindly">
+            <input type="checkbox" id="are-they-friendly" name="friendly" value="friendly">
 
-            <button type="sumbit">Add Pet!</button>
+            <button type="sumbit" id="add-pet-button">Add Pet!</button>
         </form>
-
-        <section id="movieDisplay"></section>
-        </section>
     </main>
 </body>
 

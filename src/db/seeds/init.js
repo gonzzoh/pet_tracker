@@ -9,4 +9,5 @@ exports.seed = async (knex) => {
     // Deletes ALL existing entries (you can just use knex and delete everything)
     await knex('examples').del();
     // Now run your logic to create your resources with your models
+    
   };
