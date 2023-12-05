@@ -32,9 +32,6 @@
             list-style: none;
         }
 
-        span {
-            color: red;
-        }
     </style>
     <script type="module" src="./index.js"></script>
 </head>
@@ -43,14 +40,14 @@
     <main>
         <h1>Pet Project</h1>
         <form id="add-pet-form" aria-labelledby="form-heading">
-            <label for="name">Pet Name<span class="required">*</span>:</label>
+            <label for="name">Pet Name<sup>*</sup>:</label>
             <input required type="text" id="name" name="name">
 
-            <label for="profile-picture">Profile Picture<span class="required">*</span></label>
+            <label for="profile-picture">Profile Picture<sup>*</sup></label>
             <input required type="text" id="profile-picture" name="petPic">
 
             <fieldset>
-                <legend for="species">Species<span class="required">*</span>:</legend>
+                <legend for="species">Species<sup>*</sup>:</legend>
 
                 <input required type="radio" id="cat" name="species"/>
                 <label for="cat">Cat</label><br />
