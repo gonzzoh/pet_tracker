@@ -14,9 +14,5 @@ app.use(express.json());
 app.use(logRoutes);
 app.use(petRoutes);
 
-app.get('/hi', (req, res) => {
-    res.send("hi")
-})
-
 
 module.exports = app;

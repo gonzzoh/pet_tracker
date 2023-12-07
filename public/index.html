@@ -29,41 +29,80 @@
 
         #pet-list {
             flex-wrap: wrap;
+            flex-direction: row;
             list-style: none;
+            height: 100%;
+            width: 100%;
+        }
+
+        .card {
+            border: 0.1rem solid #000;
+            padding: 1rem;
+            width: 15rem;
+            text-align: center;
+            margin: 0.3em auto;
+        }
+
+        .pet-image {
+            width: 75%;
+            height: auto;
+        }
+
+        main {
+            display: flex;
+            flex-direction: row;
+            height: 100vh;
+        }
+
+        #form-and-title-style {
+            margin: 1rem auto;
+        }
+
+        #pet-list-wrapper {
+            height: 55%;
+            width: 75%;
+            margin: 1rem auto;
         }
 
     </style>
-    <script type="module" src="./index.js"></script>
+    <script type="module" src="./script.js"></script>
 </head>
 
 <body>
     <main>
-        <h1>Pet Project</h1>
-        <form id="add-pet-form" aria-labelledby="form-heading">
-            <label for="name">Pet Name<sup>*</sup>:</label>
-            <input required type="text" id="name" name="name">
+        <section id="form-and-title-style">
+            <h1>Pet Project</h1>
+            <form id="add-pet-form" aria-labelledby="form-heading">
+                <label for="name">Pet Name<sup>*</sup>:</label>
+                <input required type="text" id="name" name="name">
 
-            <label for="profile-picture">Profile Picture<sup>*</sup></label>
-            <input required type="text" id="profile-picture" name="petPic">
+                <label for="profile-picture">Profile Picture<sup>*</sup></label>
+                <input required type="text" id="profile-picture" name="profilePicture">
 
-            <fieldset>
-                <legend for="species">Species<sup>*</sup>:</legend>
+                <fieldset>
+                    <legend for="species">Species<sup>*</sup>:</legend>
 
-                <input required type="radio" id="cat" name="species"/>
-                <label for="cat">Cat</label><br />
+                    <input required type="radio" id="cat" value="cat" name="species" />
+                    <label for="cat">Cat</label><br />
 
-                <input type="radio" id="dog" name="species"/>
-                <label for="og">Dog</label><br />
+                    <input type="radio" id="dog" value="dog" name="species" />
+                    <label for="dog">Dog</label><br />
 
-                <input type="radio" id="bird" name="species"/>
-                <label for="bird">Bird</label>
-            </fieldset>
+                    <input type="radio" id="bird" value="bird" name="species" />
+                    <label for="bird">Bird</label>
+                </fieldset>
 
-            <label for="are-they-friendly">Are They Friendly?</label>
-            <input type="checkbox" id="are-they-friendly" name="friendly" value="friendly">
+                <label for="are-they-friendly">Are They Friendly?</label>
+                <input type="checkbox" id="are-they-friendly" name="is_friendly" value="true">
 
-            <button type="sumbit" id="add-pet-button">Add Pet!</button>
-        </form>
+                <button type="sumbit" id="add-pet">Add Pet!</button>
+            </form>
+        </section>
+
+        <section id="pet-list-wrapper">
+            <h2>Pet List</h2>
+                <ul id="pet-list"></ul>
+        </section>
     </main>
 </body>
 

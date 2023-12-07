@@ -9,7 +9,7 @@ exports.up = function(knex) {
         table.string('profilePicture'); 
         table.string('species'); 
         table.boolean('is_friendly').defaultTo(false); // boolean, optional default
-    
+        // name, profilePicture, species, is_friendly
         /* add a foreign key that links to a hypothetical users table */
         // You must first have created a users table with a key called id!
         // table.integer('user_id').index().references('id').inTable('users');

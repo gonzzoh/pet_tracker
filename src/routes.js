@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.use(addModels);
 
-router.post('/pets', petsController.create);
 router.get('/pets', petsController.list);
+router.post('/pets', petsController.create);
 
 module.exports = router;
