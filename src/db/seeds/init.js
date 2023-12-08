@@ -11,8 +11,8 @@ exports.seed = async (knex) => {
     // Now run your logic to create your resources with your models
 
     await knex.table('pet_resources').insert([
-      { name: 'dawg', profilePicture: 'https://i.imgur.com/7VnFjyC.jpg', species: 'cat', is_friendly: true },
-      { name: 'katt', profilePicture: 'https://i.imgur.com/7VnFjyC.jpg', species: 'dog', is_friendly: false },
+      { name: 'dawg', profile_picture: 'https://i.imgur.com/7VnFjyC.jpg', species: 'cat', is_friendly: true },
+      { name: 'katt', profile_picture: 'https://i.imgur.com/7VnFjyC.jpg', species: 'dog', is_friendly: false },
     ])
 
   };
