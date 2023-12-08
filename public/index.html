@@ -28,8 +28,6 @@
         }
 
         #pet-list {
-            flex-wrap: wrap;
-            flex-direction: row;
             list-style: none;
             height: 100%;
             width: 100%;
@@ -59,11 +57,12 @@
         }
 
         #pet-list-wrapper {
+            flex-direction: column;
+            flex-wrap: wrap;
             height: 55%;
             width: 75%;
             margin: 1rem auto;
         }
-
     </style>
     <script type="module" src="./script.js"></script>
 </head>
@@ -101,7 +100,7 @@
 
         <section id="pet-list-wrapper">
             <h2>Pet List</h2>
-                <ul id="pet-list"></ul>
+            <ul id="pet-list"></ul>
         </section>
     </main>
 </body>

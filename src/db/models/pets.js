@@ -16,6 +16,17 @@ class Pets {
     }
   }
 
+  static async delete(id) {
+    try {
+      const query = `DELETE FROM pet_resources WHERE id = ? RETURNING *`;
+      const res = await knex.raw(query, [id]);
+      return res.rows[0];
+    } catch (err) {
+      console.error(err);
+      return null;
+    }
+  }
+
   static async list() {
     try {
       const query = `SELECT * FROM pet_resources`;
