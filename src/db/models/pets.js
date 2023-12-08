@@ -2,12 +2,25 @@ const knex = require('./knex');
 
 class Pets {
   // This is just an example query, obviously you need to change it, but it shows you how to use knex.raw and dynamic values
-  static async create(name, profilePicture, species, is_friendly) {
+  static async create(body) {
     try {
-      const query = `INSERT INTO pet_resources (name, profilePicture, species, is_friendly) values (?, ?, ?, ?) returning *`;
-      const res = await knex.raw(query, [name, profilePicture, species, is_friendly]);
+      const { name, profile_picture, species, is_friendly } = body;
+      console.log("Inside try block", name, profile_picture, species, is_friendly);
+      const query = `INSERT INTO pet_resources (name, profile_picture, species, is_friendly) VALUES (?, ?, ?, ?) RETURNING *`;
+      const res = await knex.raw(query, [name, profile_picture, species, is_friendly]);
       // debugger;
-      return res.rows;
+      return res.rows[0];
+    } catch (err) {
+      console.error(err);
+      return null;
+    }
+  }
+
+  static async delete(id) {
+    try {
+      const query = `DELETE FROM pet_resources WHERE id = ? RETURNING *`;
+      const res = await knex.raw(query, [id]);
+      return res.rows[0];
     } catch (err) {
       console.error(err);
       return null;

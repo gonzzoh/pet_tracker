@@ -8,5 +8,6 @@ router.use(addModels);
 
 router.get('/pets', petsController.list);
 router.post('/pets', petsController.create);
+router.delete('/pets/:id', petsController.destroy);
 
 module.exports = router;

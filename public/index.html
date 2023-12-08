@@ -28,8 +28,6 @@
         }
 
         #pet-list {
-            flex-wrap: wrap;
-            flex-direction: row;
             list-style: none;
             height: 100%;
             width: 100%;
@@ -59,11 +57,12 @@
         }
 
         #pet-list-wrapper {
+            flex-direction: column;
+            flex-wrap: wrap;
             height: 55%;
             width: 75%;
             margin: 1rem auto;
         }
-
     </style>
     <script type="module" src="./script.js"></script>
 </head>
@@ -77,7 +76,7 @@
                 <input required type="text" id="name" name="name">
 
                 <label for="profile-picture">Profile Picture<sup>*</sup></label>
-                <input required type="text" id="profile-picture" name="profilePicture">
+                <input required type="text" id="profile-picture" name="profile_picture">
 
                 <fieldset>
                     <legend for="species">Species<sup>*</sup>:</legend>
@@ -101,7 +100,7 @@
 
         <section id="pet-list-wrapper">
             <h2>Pet List</h2>
-                <ul id="pet-list"></ul>
+            <ul id="pet-list"></ul>
         </section>
     </main>
 </body>

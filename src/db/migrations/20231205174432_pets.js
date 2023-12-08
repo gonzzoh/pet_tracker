@@ -6,7 +6,7 @@ exports.up = function(knex) {
     return knex.schema.createTable('pet_resources', (table) => {
         table.increments(); // this is the id
         table.string('name'); // text
-        table.string('profilePicture'); 
+        table.string('profile_picture'); 
         table.string('species'); 
         table.boolean('is_friendly').defaultTo(false); // boolean, optional default
         // name, profilePicture, species, is_friendly
